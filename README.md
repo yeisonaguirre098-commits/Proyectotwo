@@ -1,16 +1,80 @@
-# React + Vite
+# Proyecto Two - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación React con Vite, React Router y ESLint.
 
-Currently, two official plugins are available:
+## Instalación Local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+La aplicación estará disponible en `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build para Producción
 
-## Expanding the ESLint configuration
+```bash
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Esto generará los archivos optimizados en la carpeta `dist/`.
+
+## Despliegue en Render
+
+Este proyecto está configurado para desplegar fácilmente en [Render](https://render.com).
+
+### Pasos para desplegar:
+
+1. Ve a [Render.com](https://render.com) y crea una cuenta
+2. Conecta tu repositorio de GitHub
+3. Crea un nuevo servicio web:
+   - **URL del repositorio**: `https://github.com/yeisonaguirre098-commits/Proyectotwo.git`
+   - **Branch**: `master`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm run preview`
+   - **Runtime**: Node
+
+La configuración ya está en `render.yaml`, así que Render detectará automáticamente la configuración.
+
+## Scripts disponibles
+
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run lint` - Ejecuta ESLint sobre el código
+- `npm run preview` - Previsualiza la versión compilada
+
+## Estructura del Proyecto
+
+```
+src/
+  ├── components/      # Componentes reutilizables
+  │   ├── Encabezado.jsx
+  │   ├── Navbar.jsx
+  │   └── Pie.jsx
+  ├── pages/          # Páginas de la aplicación
+  │   ├── Inicio.jsx
+  │   ├── Historia.jsx
+  │   └── Caracteristicas.jsx
+  ├── layout/         # Layout principal
+  │   └── Layout.jsx
+  ├── App.jsx         # Componente principal
+  └── main.jsx        # Punto de entrada
+```
+
+## Tecnologías
+
+- React 19
+- Vite
+- React Router DOM
+- ESLint
+
+## Solución de Problemas
+
+Si tienes problemas al desplegar en Render:
+
+1. **Error de build**: Asegúrate de que `npm run build` funciona localmente
+2. **Puerto**: Render asigna automáticamente el puerto, no necesita configuración
+3. **Node version**: Render usa Node 18+ por defecto
+
+Más información en [Render Docs](https://render.com/docs)
+
