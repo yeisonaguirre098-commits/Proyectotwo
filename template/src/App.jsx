@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
+//boostrap
+import "../node_modules/bootstrap/scss/functions";
 import Inicio from './pages/Inicio'
 import Caracteristicas from './pages/Caracteristicas'
 import Historia from './pages/Historia'
